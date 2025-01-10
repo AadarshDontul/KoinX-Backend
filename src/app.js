@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const connectDB = require('./db');
 const cron = require("node-cron");
 const fetchCryptoData = require("./services/fetchCryptoData");
+const statsRoute = require('./routes/stats');
 
 //load env vars
 dotenv.config();
@@ -16,7 +17,7 @@ const app = express();
 app.use(express.json());
 
 //placeholder for routes
-//app.use("/api", require('./routes'));
+app.use("/api", statsRoute);
 
 
 // Schedule the job to run every 2 hours
