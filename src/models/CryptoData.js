@@ -1,25 +1,27 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const CryptoDataSchema = new mongoose.Schema({
-    coin:{
+    coin: {
         type: String,
         required: true,
-        enum: ["bitcoin","matic-network","ethereum"],
+        enum: ["bitcoin", "matic-network", "ethereum"],
     },
-    price:{
+    price: {
         type: Number,
         required: true,
     },
-    marketCap:{
+    marketCap: {
         type: Number,
         required: true,
     },
-    change24h:{
+    change24h: {
         type: Number,
         required: true,
     },
-    timeStamp:{
+    timestamp: {
         type: Date,
         default: Date.now,
     },
 });
+
+module.exports = mongoose.model("CryptoData", CryptoDataSchema);

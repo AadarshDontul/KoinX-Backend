@@ -24,12 +24,14 @@ const fetchCryptoData = async () => {
         ];
 
         for (const coin of coins) {
-            await CryptoData.create({
+            const newRecord = await CryptoData.create({
                 coin: coin.id,
                 price: data[coin.id].usd,
                 marketCap: data[coin.id].usd_market_cap,
                 change24h: data[coin.id].usd_24h_change,
             });
+
+            console.log(`Saved data for ${coin.name}:`, newRecord);
         }
 
         console.log("Cryptocurrency data fetched and stored successfully.");
