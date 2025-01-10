@@ -4,7 +4,7 @@ const CryptoData = require("../models/CryptoData");  // Importing the CryptoData
 const router = express.Router();  // Creating an instance of a router to define routes
 
 // Route to get stats of a specific cryptocurrency
-router.get("/stats", async (req, res) => {
+router.get("/", async (req, res) => {
     const { coin } = req.query;  // Extracting the 'coin' query parameter from the request
 
     // Validate that the coin parameter is one of the accepted values
