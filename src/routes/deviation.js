@@ -36,7 +36,7 @@ router.get("/", async (req, res) => {
         const standardDeviation = Math.sqrt(variance);
 
         // Respond with the calculated standard deviation, rounded to two decimal places
-        res.json({ deviation: standardDeviation.toFixed(3) });
+        res.json({ deviation: standardDeviation.toFixed(2) });
     } catch (error) {
         // Catch and handle any errors that occur during database operations or calculations
         res.status(500).json({ error: "Internal server error" });
