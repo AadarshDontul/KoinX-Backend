@@ -1,10 +1,10 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const connectDB = require('./db');
+const connectDB = require('./src/db');
 const cron = require("node-cron");
-const fetchCryptoData = require("./services/fetchCryptoData");
-const statsRoute = require('./routes/stats');
-const deviationRoute = require('./routes/deviation');
+const fetchCryptoData = require("./src/services/fetchCryptoData");
+const statsRoute = require('./src/routes/stats');
+const deviationRoute = require('./src/routes/deviation');
 
 // Load environment variables
 dotenv.config();
