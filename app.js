@@ -18,8 +18,8 @@ const app = express();
 app.use(express.json());
 
 // Mount routes
-app.use("/api/stats", statsRoute);
-app.use("/api/deviation", deviationRoute);
+app.use("/stats", statsRoute);
+app.use("/deviation", deviationRoute);
 
 // Schedule the job to run every 2 hours
 cron.schedule("0 */2 * * *", () => {
